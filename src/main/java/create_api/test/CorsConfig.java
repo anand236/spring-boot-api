@@ -16,8 +16,9 @@ public class CorsConfig {
 
                 registry.addMapping("/**")
                         .allowedOrigins("https://angular-springboot-six.vercel.app")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowedHeaders("*");
+                        .allowedMethods("GET", "POST", "PUT", "DELETE","OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
