@@ -26,7 +26,7 @@ public class SecurityConfig {
                         .requestMatchers(
                                 HttpMethod.OPTIONS, "/**"
                         ).permitAll()
-                        .requestMatchers("/login").permitAll()
+                        .requestMatchers("/login", "/create").permitAll()
                         .anyRequest().authenticated()
                 ).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
